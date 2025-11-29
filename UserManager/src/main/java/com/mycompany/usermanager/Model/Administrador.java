@@ -11,6 +11,7 @@ package com.mycompany.usermanager.Model;
 public class Administrador implements IAutenticador, IAprovadorSolicitacao, INotificador {
             private String nome;
             private String senha;
+            
                         
             public Administrador(String nome, String senha) {
                 this.nome = nome;
@@ -18,13 +19,17 @@ public class Administrador implements IAutenticador, IAprovadorSolicitacao, INot
             }
 
             @Override
-            public void aprovarSolicitacao() {
-
+            public void aprovarSolicitacao(Usuario usuario) {
+                        if(usuario.validaUsuarioPendente()){
+                            usuario.setStatus(Status.APROVADO);                        
+                        }
             }
 
             @Override
-            public void rejeitarSolicitacao() {
-
+            public void rejeitarSolicitacao(Usuario usuario) {
+                    if(usuario.validaUsuarioPendente()){
+                            usuario.setStatus(Status.REJEITADO);
+                    }
             }
 
             @Override

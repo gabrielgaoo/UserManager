@@ -9,17 +9,13 @@ package com.mycompany.usermanager.Model;
  * @author Lenovo
  */
 public class Solicitacao {
-            private Usuario usuario;
+            private Usuario  usuario;
             private IAprovadorSolicitacao solicita;
             
             public Solicitacao(Usuario usuario) {
                 this.usuario = usuario;
             }
             public void  enviarSolicitacao(Usuario usuario){
-                  if(usuario.getStatus().PENDENTE.equals(Status.PENDENTE)){  
-                  solicita.aprovarSolicitacao();
-                  }
-            
-            }                
-            
+                                    solicita.aprovarSolicitacao(usuario);                              
+            }                            
 }

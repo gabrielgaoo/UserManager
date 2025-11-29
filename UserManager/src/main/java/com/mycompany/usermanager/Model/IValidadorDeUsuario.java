@@ -8,7 +8,7 @@ package com.mycompany.usermanager.Model;
  *
  * @author Lenovo
  */
-public interface IAprovadorSolicitacao {
-               public void aprovarSolicitacao(Usuario usuario);
-               public void rejeitarSolicitacao(Usuario usuario);
+public interface IValidadorDeUsuario {
+             public boolean validaUsuarioAtivo();
+             public boolean validaUsuarioPendente();
 }
